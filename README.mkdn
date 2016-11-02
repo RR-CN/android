@@ -1,10 +1,6 @@
 CyanogenMod
 ===========
 
-thank:
-
-sudaMod Meiji
-
 ------------------
 Getting Started
 -------------------
@@ -45,13 +41,13 @@ Giving the repo binary the proper permissions
 
     $ chmod a+x ~/bin/repo
 
-Creating directory for where the sdhz150 repo will be stored and synced
+Creating directory for where the cm-13.0 repo will be stored and synced
 
-    $ mkdir ~/sdhz150 $ cd ~/sdhz150
+    $ mkdir ~/cm-13.0 $ cd ~/cm-13.0
 
-Initializing the sdhz150 repo and downloading the manifest
+Initializing the cm-13.0 repo and downloading the manifest
 
-    $ repo init -u git://github.com/sdhz151/android.git -b cm-14.1
+    $ repo init -u git://github.com/xiaobai0324/android.git -b cm-14.1
     
 Syncing the source
 
@@ -63,19 +59,19 @@ Syncing the source
 
 ###Setting Up CCache
 
-CCache is a method of utilizing a specified storage space to speed up building. It can be referred to as the same caching your android device does to speed up application and system boot times. In this case, CCache will help build sdhz150 faster than standard build times (Able to cut-down 50% of time taken to build).
+CCache is a method of utilizing a specified storage space to speed up building. It can be referred to as the same caching your android device does to speed up application and system boot times. In this case, CCache will help build cm-13.0 faster than standard build times (Able to cut-down 50% of time taken to build).
 
 To set up CCache, follow the following:
 
     $ echo "export USE_CCACHE=1" >> ~/.bashrc
 
-    $ ~/sdhz150/prebuilts/misc/linux-x86/ccache/ccache -M 50G
+    $ ~/cm-13.0/prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
 -M 50G The number before the letter G at the end specifies the amount of space CCache can use in your storage unit. As such, ensure that not too much of space is specified as this might result in unexpected errors although, the more storage you have, its recommended to have more CCache as it will increase the build times. Most efficient build systems are able to utilize CCache to about 120G or more.
 
-###To build sdhz150
+###To build cm-13.0
 
-    $ cd ~/sdhz150 
+    $ cd ~/cm-13.0 
     
     $ . build/envsetup.sh
 
@@ -91,8 +87,8 @@ Obtaining the zip created from the build process
 
 To get the zip file that has been built, navigate to the following directory and find for the zip file:
 
-    $ cd ~/sdhz150/out/target/product/
+    $ cd ~/cm-13.0/out/target/product/
 
 If you found it, then congratulations! If you didn't, try retrying the build process but before doing so, ensure you do the following to make sure your next build is clean;
 
-    $ cd ~/sdhz150 && make clean && repo sync -j 16
+    $ cd ~/cm-13.0 && make clean && repo sync -j 16
