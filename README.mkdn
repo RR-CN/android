@@ -47,7 +47,7 @@ Creating directory for where the cm-13.0 repo will be stored and synced
 
 Initializing the cm-13.0 repo and downloading the manifest
 
-    $ repo init -u git://github.com/xiaobai0324/android.git -b cm-14.1
+    $ repo init -u git://github.com/xiaobai0324/android.git -b cm-13.0
     
 Syncing the source
 
